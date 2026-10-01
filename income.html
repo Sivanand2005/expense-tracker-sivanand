@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="expenditure.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Expense Tracker</h1>
+
+        <div class="summary">
+
+            <div class="summary-box income-box">
+                <h3>Total Income</h3>
+                <p id="totalIncome">₹0.00</p>
+            </div>
+
+            <div class="summary-box expense-box">
+                <h3>Total Expenses</h3>
+                <p id="totalExpense">₹0.00</p>
+            </div>
+
+            <div class="summary-box balance-box">
+                <h3>Current Balance</h3>
+                <p id="balance">₹0.00</p>
+            </div>
+
+        </div>
+
+        <div class="form-container">
+
+            <h2>Add Transaction</h2>
+
+            <form id="transactionForm">
+
+                <div class="form-group">
+
+                    <label>Transaction Type</label>
+
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Amount</label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Category</label>
+
+                    <select id="category" required>
+
+                        <option value="">Select Category</option>
+
+                        <option value="Salary">Salary</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="Enter description"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" id="submitBtn">
+                    Add Transaction
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="filter-container">
+
+            <h2>Transactions</h2>
+
+            <div class="filters">
+
+                <select id="typeFilter">
+
+                    <option value="all">All Transactions</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+
+                </select>
+
+
+                <select id="categoryFilter">
+
+                    <option value="all">All Categories</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="transactionList">
+
+                </tbody>
+
+            </table>
+
+            <p id="noTransactions">
+                No transactions found.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="saving.js"></script>
+
+</body>
+</html>
